@@ -43,9 +43,11 @@ rows = soup.select('tbody > tr')
 #     episodes.append(Episode(**data))
 # As a one-liner
 episodes = [Episode(**extract_episode_data(row)) for row in rows]
+def search_episodes():
+    search_term = input('Enter a search term: ')
+    results = [episode for episode in episodes if search_term.lower() in episode.title.lower()]
+    print(f"Found {len(results)} episodes with the term {search_term}")
+    pprint(results)
+    search_episodes()
 
-search_term = input('Enter a search term: ')
-results = [episode for episode in episodes if search_term.lower() in episode.title.lower()]
-
-print(f"Found {len(results)} episodes with the term {search_term}")
-pprint(results)
+search_episodes()
