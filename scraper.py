@@ -1,4 +1,3 @@
-
 # https://www.youtube.com/watch?v=dYWnS8eRf4M
 # Building a CLI Tool | Scraping & Processing Data with BeautifulSoup, Requests & Pydantic
 import requests
